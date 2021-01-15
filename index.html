@@ -1267,7 +1267,7 @@ timeline.push(attncheck_fb);
 
     var think_retroT2 = {
       type: "instructions",
-      pages: ['<p>Consider what you wanted throughout the choice task.</p>'],
+      pages: ['<p>Consider what you wanted in the second half of the choice task.</p>'],
     show_clickable_nav: true,
         on_finish: function(data){
             data.trial = 'think_retroT2'
@@ -1806,7 +1806,7 @@ timeline.push(attncheck_fb);
     var manipulation_comp = {
         type: 'html-button-response',
         stimulus: 'Earlier in this study, did you learn information about other Prolific users?<br>',
-        choices: ['Yes, I received information about what other people chose', 'Yes, I received information about what other people wanted', 'No, I received no information about other Prolific users'],
+        choices: ['Yes, I received info about what other users chose', 'Yes, I received info about what other users wanted', 'No, I received no info about other Prolific users'],
         on_finish: function(data){
             data.trial = 'manipulation_comp'
         }
