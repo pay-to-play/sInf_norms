@@ -900,7 +900,7 @@ timeline.push(attncheck_fb);
             if(j < 26) {
                 var char_half1 = {
                     type: 'html-button-response',
-                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
                     choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
                     margin_horizontal: '100px',
                     button_html: '<button class="choice-button">%choice%</button>',
@@ -933,7 +933,7 @@ timeline.push(attncheck_fb);
               if(j >= 26) {
                 var char_half2 = {
                     type: 'html-button-response',
-                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
                     choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
                     margin_horizontal: '100px',
                     button_html: '<button class="choice-button">%choice%</button>',
@@ -1177,7 +1177,7 @@ timeline.push(attncheck_fb);
       
             var nextTask = {
               type: "instructions",
-              pages: ['<p>Press continue to proceed to the next set of choices when ready.</p>'],
+              pages: ['<p>Press "Next" to proceed to the next set of choices when ready.</p>'],
             show_clickable_nav: true,
             on_finish: function(data){
             data.trial = 'nextTask'
@@ -1193,7 +1193,7 @@ timeline.push(attncheck_fb);
                 if(j < 26) {
                     var char_half3 = {
                         type: 'html-button-response',
-                        stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                        stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
                         choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
                         margin_horizontal: '100px',
                         button_html: '<button class="choice-button">%choice%</button>',
@@ -1226,7 +1226,7 @@ timeline.push(attncheck_fb);
                   if(j >= 26) {
                     var char_half4 = {
                         type: 'html-button-response',
-                        stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                        stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
                         choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
                         margin_horizontal: '100px',
                         button_html: '<button class="choice-button">%choice%</button>',
@@ -1801,9 +1801,8 @@ timeline.push(attncheck_fb);
       
       
     var manipulation_comp = {
-        type: 'survey-likert',
+        type: 'html-button-response',
         stimulus: 'Earlier in this study, did you learn information about other Prolific users?<br>',
-//        button_html: '<button class="jspsych-btn">%choice%</button><br>',
         choices: ['Yes, I received information about what other people chose', 'Yes, I received information about what other people wanted', 'No, I received no information about other Prolific users'],
         on_finish: function(data){
             data.trial = 'manipulation_comp'
