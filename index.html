@@ -841,7 +841,7 @@ timeline.push(attncheck_fb);
 // NEED TO SAVE CONTENTS OF ALL LOOPS
       
      
-    var choice_set = 51; 
+    var choice_set = 5; // change back to 51
     var j;
       
       
@@ -892,63 +892,63 @@ timeline.push(attncheck_fb);
   
       
       
-//      
-//      
-//   
-////CHAR FIRST
-//        for (j = 0; j < choice_set; j++) {
-//            if(j < 26) {
-//                var char_half1 = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                    on_finish: function(data){
-//                        data.trial = 'char_half1',
-//                        data.optionL = left_char_Stim,
-//                        data.optionR = right_char_Stim
-//                    }
-//                };
-//                timeline.push(char_half1);
-//                timeline.push(fixation);
-//            };
-//
-//            
-//            if(j == catchIndex) {
-//                var catchTrial = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+youColor_pic+'"></div>'+'<div id="rightStim"><img src="img/'+youColor_pic+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ "50.00" + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+ "0.00" + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                    on_finish: function(data) {
-//                        data.catchIndex = catchIndex
-//                        data.trial = "catchTrial"}
-//                    };
-//                    timeline.push(catchTrial);
-//                    timeline.push(fixation);
-//                };
-//
-//              if(j >= 26) {
-//                var char_half2 = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                    on_finish: function(data){
-//                        data.trial = 'char_half2',
-//                        data.optionL = left_char_Stim,
-//                        data.optionR = right_char_Stim
-//                    }
-//                };
-//                timeline.push(char_half2);
-//                timeline.push(fixation);
-//            };};
-//      
-//      
-//      
+      
+      
+   
+//CHAR FIRST
+        for (j = 0; j < choice_set; j++) {
+            if(j < 26) {
+                var char_half1 = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                    on_finish: function(data){
+                        data.trial = 'char_half1',
+                        data.optionL = left_char_Stim,
+                        data.optionR = right_char_Stim
+                    }
+                };
+                timeline.push(char_half1);
+                timeline.push(fixation);
+            };
+
+            
+            if(j == catchIndex) {
+                var catchTrial = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+youColor_pic+'"></div>'+'<div id="rightStim"><img src="img/'+youColor_pic+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ "50.00" + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+ "0.00" + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                    on_finish: function(data) {
+                        data.catchIndex = catchIndex
+                        data.trial = "catchTrial"}
+                    };
+                    timeline.push(catchTrial);
+                    timeline.push(fixation);
+                };
+
+              if(j >= 26) {
+                var char_half2 = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                    on_finish: function(data){
+                        data.trial = 'char_half2',
+                        data.optionL = left_char_Stim,
+                        data.optionR = right_char_Stim
+                    }
+                };
+                timeline.push(char_half2);
+                timeline.push(fixation);
+            };};
+      
+      
+      
       
      ////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
       
@@ -1187,62 +1187,62 @@ timeline.push(attncheck_fb);
       
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////    
             
-//CHAR SECOND 
-//        for (j = 0; j < choice_set; j++) {
-//
-//                if(j < 26) {
-//                    var char_half3 = {
-//                        type: 'html-button-response',
-//                        stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
-//                        choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
-//                        margin_horizontal: '100px',
-//                        button_html: '<button class="choice-button">%choice%</button>',
-//                        on_finish: function(data){
-//                            data.trial = 'char_half3',
-//                            data.optionL = left_char_Stim,
-//                            data.optionR = right_char_Stim
-//                        }
-//                    };
-//                    timeline.push(char_half3);
-//                    timeline.push(fixation);
-//                };
-//
-//            
-//            if(j == catchIndex) {
-//                var catchTrial = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+youColor_pic+'"></div>'+'<div id="rightStim"><img src="img/'+youColor_pic+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ "50.00" + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+ "0.00" + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                    on_finish: function(data) {
-//                        data.catchIndex = catchIndex
-//                        data.trial = "catchTrial"}
-//                    };
-//                    timeline.push(catchTrial);
-//                    timeline.push(fixation);
-//                };
-//
-//                  if(j >= 26) {
-//                    var char_half4 = {
-//                        type: 'html-button-response',
-//                        stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
-//                        choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
-//                        margin_horizontal: '100px',
-//                        button_html: '<button class="choice-button">%choice%</button>',
-//                        on_finish: function(data){
-//                            data.trial = 'char_half4',
-//                            data.optionL = left_char_Stim,
-//                            data.optionR = right_char_Stim
-//                        }
-//                    };
-//                    timeline.push(char_half4);
-//                    timeline.push(fixation);
-//                };};      
-//         
-//      
-//      
-//      
+CHAR SECOND 
+        for (j = 0; j < choice_set; j++) {
+
+                if(j < 26) {
+                    var char_half3 = {
+                        type: 'html-button-response',
+                        stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                        choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
+                        margin_horizontal: '100px',
+                        button_html: '<button class="choice-button">%choice%</button>',
+                        on_finish: function(data){
+                            data.trial = 'char_half3',
+                            data.optionL = left_char_Stim,
+                            data.optionR = right_char_Stim
+                        }
+                    };
+                    timeline.push(char_half3);
+                    timeline.push(fixation);
+                };
+
+            
+            if(j == catchIndex) {
+                var catchTrial = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+youColor_pic+'"></div>'+'<div id="rightStim"><img src="img/'+youColor_pic+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ "50.00" + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+ "0.00" + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                    on_finish: function(data) {
+                        data.catchIndex = catchIndex
+                        data.trial = "catchTrial"}
+                    };
+                    timeline.push(catchTrial);
+                    timeline.push(fixation);
+                };
+
+                  if(j >= 26) {
+                    var char_half4 = {
+                        type: 'html-button-response',
+                        stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<br>or'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                        choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(option_pairs[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(option_pairs[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
+                        margin_horizontal: '100px',
+                        button_html: '<button class="choice-button">%choice%</button>',
+                        on_finish: function(data){
+                            data.trial = 'char_half4',
+                            data.optionL = left_char_Stim,
+                            data.optionR = right_char_Stim
+                        }
+                    };
+                    timeline.push(char_half4);
+                    timeline.push(fixation);
+                };};      
+         
+      
+      
+      
       
       
       
