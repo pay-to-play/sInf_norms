@@ -1013,18 +1013,9 @@ timeline.push(attncheck_fb);
             
                 
   
-            if(condition == 'control') {
+
       
-            var control_intro = {
-                  type: "instructions",
-                  pages: ['<p>Press continue to proceed to the new set of choices when you are ready.</p>'],
-                show_clickable_nav: true
-                };
-                    timeline.push(control_intro);  
-              
-            }
-      
-      // add else
+  
             if(condition == 'motive') {
       
             } 
@@ -1077,6 +1068,10 @@ timeline.push(attncheck_fb);
             }
                     timeline.push(motive_induction);  
     
+      
+      
+      
+      
       // add else
             if(condition == 'choice') {
       
@@ -1113,17 +1108,35 @@ timeline.push(attncheck_fb);
                     data.trial = 'motive_induction1'
                 }
             }
-                timeline.push(choice_induction1);  
+                timeline.push(choice_induction1); 
+      
+      
+      
+          // add else
+            if(condition == 'control') {
+    
+                
+            }
       
       
       
    //////////////////////////////////////////////////////////////////////////////////////////////////////////////  
       
       
+            var think_proT2 = {
+              type: "instructions",
+              pages: ['<p>You will soon begin the next set of choices.</p>'],
+            show_clickable_nav: true,
+                on_finish: function(data){
+                    data.trial = 'think_proT2'
+                }
+            };
+            timeline.push(think_proT2); 
+          
           
             var think_proT2 = {
               type: "instructions",
-              pages: ['<p>Think about the different options you can pursue in this study.</p>'],
+              pages: ['<p>Consider the different options you can pursue in the next set of choices.</p>'],
             show_clickable_nav: true,
                 on_finish: function(data){
                     data.trial = 'think_proT2'
@@ -1307,7 +1320,7 @@ timeline.push(attncheck_fb);
         var function_char_fairQ = function(param){
         var size = 50 + Math.floor(param*250); /* min 50/350, max 300/350 */
         var html = 
-           '<p style="font-family:arial;">At minimum, how much is a <b>fair amount</b><br> to want to earn money for <b><font color="'+left_char_Color+'">'+left_char+'</font></b><br> vs. <b><font color="'+right_char_Color+'">'+right_char+'</font></b> in this study?</p>'+
+           '<p style="font-family:arial;">At minimum, how much is a <b>fair amount</b><br> to want to earn money for <br><b><font color="'+left_char_Color+'">'+left_char+'</font></b> vs. <b><font color="'+right_char_Color+'">'+right_char+'</font></b> in this study?</p>'+
             
             '<p class = "small" style="font-family:arial;margin-top: 25px;margin-bottom:5px"><font size="2"></p>'+
             
@@ -1383,7 +1396,7 @@ timeline.push(attncheck_fb);
               var function_char_avgPerson = function(param){
         var size = 50 + Math.floor(param*250); /* min 50/350, max 300/350 */
         var html = 
-           '<p style="font-family:arial;"><b>Think about the average person.</b><br>How much do you think they would want <br> to earn money for <b><font color="'+left_char_Color+'">'+left_char_avg+'</font></b><br> vs. <b><font color="'+right_char_Color+'">'+right_char_avg+'</font></b> in this study?</p>'+
+           '<p style="font-family:arial;"><b>Think about the average person.</b><br>How much do you think they would want <br> to earn money for <br><b><font color="'+left_char_Color+'">'+left_char_avg+'</font></b> vs. <b><font color="'+right_char_Color+'">'+right_char_avg+'</font></b> in the study?</p>'+
             
             '<p class = "small" style="font-family:arial;margin-top: 25px;margin-bottom:5px"><font size="2"></p>'+
             
@@ -1539,7 +1552,7 @@ timeline.push(attncheck_fb);
           var mem_char = {
         type: 'survey-text',
         questions: [
-            {prompt:"<div class='instructions'><p>Please think back to the choices you made earlier.</p><p>We would like you to remember, on average across your choices between earning money for yourself and money for the Red Cross, <b>what percent of your choices were choices to earn money for the Red Cross</b>.</p><p>You will receive an additional monetary bonus (separate from rewards in this study) that depends on how accurate your response is. The closer your response is to your actual average choice percent, the more money you will earn. If you report exactly the correct amount, you will receive 100% of the bonus. For each 1% off your response is from your actual average, your bonus will decrease by 2%.</p><p>Enter the choice percent as a number (no letters or symbols) between 0 and 100</div>",rows: 1, columns: 3}],
+            {prompt:"<div class='instructions'><p>Please think back to the choices you made earlier.</p><p>We would like you to remember, on average across your choices between earning money for yourself and money for the Red Cross, <b>what percent of your choices were choices to earn money for the Red Cross</b>.</p><p>You will receive an additional monetary bonus (separate from other incentives in this study) that depends on how accurate your response is. The closer your response is to your actual average choice percent, the more money you will earn. If you report exactly the correct amount, you will receive 100% of the bonus. For each 1% off your response is from your actual average, your bonus will decrease by 2%.</p><p>Enter the choice percent as a number (no letters or symbols) between 0 and 100</div>",rows: 1, columns: 3}],
         on_finish: function(data){
             data.trial = 'mem_char'
         }
@@ -1686,8 +1699,8 @@ timeline.push(attncheck_fb);
       
       
 // EXIT QUESTIONS  
-              
-
+            
+      
       
    var mtvScale = {
           type: 'survey-text',
@@ -1727,33 +1740,7 @@ timeline.push(attncheck_fb);
             "6", 
             "7<br>Strongly<br>agree",
         ];
- 
-    var parh_scale = {
-        type: 'survey-likert',
-        preamble: 
-            '<div style="padding-top: 50px; width: 850px; font-size:16px">'
-            +'<p>Please rate how much you <b>agree or disagree</b> with each of the following statements:',
-        questions: [
-            {prompt: '<b>I knew what the researchers were investigating in this research.</b>',
-            name: 'parh1',
-            labels: scale},
-            {prompt: '<b>I wasn’t sure what the researchers were trying to demonstrate in this research.</b>',
-            name: 'parh2',
-            labels: scale},
-            {prompt: '<b>I had a good idea about what the hypotheses were in this research.</b>',
-            name: 'parh3',
-            labels: scale},
-            {prompt: '<b>I was unclear about exactly what the researchers were aiming to prove in this research.</b>',
-            name: 'parh4',
-            labels: scale},
-        ],
-        randomize_question_order: false,
-        scale_width: 500,
-        on_finish: function(data){
-            data.trial = 'parh_scale'
-        }
-    };
-    timeline.push(parh_scale);
+
       
 
     var openSkeptic = {
@@ -1766,6 +1753,63 @@ timeline.push(attncheck_fb);
         }
         }; 
     timeline.push(openSkeptic);
+      
+      
+    var parh_scale1 = {
+        type: 'survey-likert',
+        preamble: 
+            '<div style="padding-top: 50px; width: 850px; font-size:16px">'
+            +'<p>Please rate how much you <b>agree or disagree</b> with each of the following statements:',
+        questions: [
+            {prompt: '<b>I knew what the researchers were investigating in this research.</b>',
+            name: 'parh1',
+            labels: scale},
+            {prompt: '<b>I wasn’t sure what the researchers were trying to demonstrate in this research.</b>',
+            name: 'parh2',
+            labels: scale},
+        ],
+        randomize_question_order: false,
+        scale_width: 500,
+        on_finish: function(data){
+            data.trial = 'parh_scale1'
+        }
+    };
+    timeline.push(parh_scale1);
+      
+      
+    var parh_scale2 = {
+        type: 'survey-likert',
+        preamble: 
+            '<div style="padding-top: 50px; width: 850px; font-size:16px">'
+            +'<p>Please rate how much you <b>agree or disagree</b> with each of the following statements:',
+        questions: [
+            {prompt: '<b>I had a good idea about what the hypotheses were in this research.</b>',
+            name: 'parh3',
+            labels: scale},
+            {prompt: '<b>I was unclear about exactly what the researchers were aiming to prove in this research.</b>',
+            name: 'parh4',
+            labels: scale},
+        ],
+        randomize_question_order: false,
+        scale_width: 500,
+        on_finish: function(data){
+            data.trial = 'parh_scale2'
+        }
+    };
+    timeline.push(parh_scale2);
+      
+      
+    var manipulation_comp = {
+        type: 'survey-likert',
+        stimulus: 'Earlier in this study, did you learn information about other Prolific users?<br>',
+//        button_html: '<button class="jspsych-btn">%choice%</button><br>',
+        choices: ['Yes, I received information about what other people chose', 'Yes, I received information about what other people wanted', 'No, I received no information about other Prolific users'],
+        on_finish: function(data){
+            data.trial = 'manipulation_comp'
+        }
+    };
+    timeline.push(manipulation_comp); 
+      
       
     var finalWord = {
           type: 'survey-text',
@@ -1806,7 +1850,7 @@ timeline.push(attncheck_fb);
     var platformLink = 'https://app.prolific.co/submissions/complete?cc=1E12AFFE';
     var conclusion = {
         type: 'html-button-response',
-        stimulus: '<p>To complete the study, copy the link below <b>and then click the SUBMIT button</b>.</p><p>Then paste the link in your browser to recieve your payment. Thank you!</p><p><b>'+platformLink+'</b></p><br>',
+        stimulus: '<p>To complete the study, first copy the link below <b>and then click the SUBMIT button</b>.</p><p>Then paste the link in your browser to recieve your payment. Thank you!</p><p><b>'+platformLink+'</b></p><br>',
         choices: ['<font size="+2"><b>SUBMIT</b></font>'],
         on_finish: function(data){
             data.trial = 'conclusion'
