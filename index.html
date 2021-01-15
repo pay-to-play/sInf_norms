@@ -1018,10 +1018,9 @@ timeline.push(attncheck_fb);
       
   
             if(condition == 'motive') {
-      
-            } 
-      
-            var motive_intro1 = {
+                
+                
+              var motive_intro1 = {
                   type: "instructions",
                   pages: ['<p>We now want to provide some additional information. <br><br><b>Please read this information carefully, as you may be tested on it later in the study</b>.'],
                 show_clickable_nav: true
@@ -1071,13 +1070,14 @@ timeline.push(attncheck_fb);
     
       
       
+            } 
+      
+    
       
       
     // remove else to display all conditions for de-bugging
             else if(condition == 'choice') {
-      
-            }
-      
+         
             var choice_intro1 = {
                   type: "instructions",
                   pages: ['<p>We now want to provide some additional information. <br><br><b>Please read this information carefully, as you may be tested on it later in the study</b>.'],
@@ -1110,6 +1110,9 @@ timeline.push(attncheck_fb);
                 }
             }
                 timeline.push(choice_induction1); 
+            }
+      
+            
       
       
           // remove else to display all conditions for de-buggings
