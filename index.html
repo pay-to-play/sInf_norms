@@ -193,25 +193,25 @@ var timeline = [];
  
       
 ////Function to check whether consent has been given
-//var check_consent = function(elem) {
-//        if (document.getElementById('consent_checkbox').checked) {
-//            return true;
-//        }
-//        else {
-//            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
-//            return false;
-//        }
-//        return false;
-//    };
-//
-////Presents external consent page to participants
-//    var consent = {
-//            type:'external-html',
-//            url: "consent.html",
-//            cont_btn: "start",
-//            check_fn: check_consent
-//        };
-//        timeline.push(consent);
+var check_consent = function(elem) {
+        if (document.getElementById('consent_checkbox').checked) {
+            return true;
+        }
+        else {
+            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+            return false;
+        }
+        return false;
+    };
+
+//Presents external consent page to participants
+    var consent = {
+            type:'external-html',
+            url: "consent.html",
+            cont_btn: "start",
+            check_fn: check_consent
+        };
+        timeline.push(consent);
       
       
       
@@ -841,7 +841,7 @@ timeline.push(attncheck_fb);
 // NEED TO SAVE CONTENTS OF ALL LOOPS
       
      
-    var choice_set = 5; // change back to 51
+    var choice_set = 51; // change back to 51
     var j;
       
       
@@ -1073,8 +1073,8 @@ timeline.push(attncheck_fb);
       
       
       
-      // add else
-            if(condition == 'choice') {
+    // remove else to display all conditions for de-bugging
+            else if(condition == 'choice') {
       
             }
       
@@ -1112,9 +1112,9 @@ timeline.push(attncheck_fb);
                 timeline.push(choice_induction1); 
       
       
-      
-          // add else
-            if(condition == 'control') {
+          // remove else to display all conditions for de-buggings
+       
+            else if(condition == 'control') {
     
                 
             }
